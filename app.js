@@ -42,6 +42,5 @@ function calculate() {
 
   document.getElementById("result").innerText = resultText;
 }
-
 // Load medicines when page opens
 loadMedicines();
