@@ -24,16 +24,23 @@ function calculate() {
   }
 
   const med = window.medicines[selectedIndex];
-  let totalDose = weight * med.dosePerKg;
-  if (totalDose > med.maxDose) totalDose = med.maxDose;
+  const calculatedDose = weight * med.dosePerKg;
+  const cappedDose = Math.min(calculatedDose, med.maxDose);
+  const perDose = (cappedDose / med.dividedDoses).toFixed(2);
 
-  const perDose = (totalDose / med.dividedDoses).toFixed(2);
+  let resultText =
+    `💊 Medicine: ${med.name}\n` +
+    `👶 Weight: ${weight} kg\n` +
+    `📈 Calculated Dose: ${calculatedDose.toFixed(2)} mg/day\n` +
+    `🚫 Max Allowed Dose: ${med.maxDose} mg/day\n` +
+    `✅ Final Dose Used: ${cappedDose.toFixed(2)} mg/day\n` +
+    `🕒 Divided Doses: ${med.dividedDoses} × ${perDose} mg`;
 
-  document.getElementById("result").innerText =
-    `Medicine: ${med.name}\n` +
-    `Weight: ${weight} kg\n` +
-    `Total Daily Dose: ${totalDose} mg/day\n` +
-    `Divided Doses: ${med.dividedDoses} × ${perDose} mg`;
+  if (calculatedDose > med.maxDose) {
+    resultText += `\n⚠️ Note: Calculated dose exceeds max limit and has been capped.`;
+  }
+
+  document.getElementById("result").innerText = resultText;
 }
 
 // Load medicines when page opens

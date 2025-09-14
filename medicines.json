@@ -1,5 +1,5 @@
 [
-  { "name": "Paracetamol", "dosePerKg": 15, "maxDose": 4000, "dividedDoses": 4 },
+  { "name": "Paracetamol", "dosePerKg": 10, "maxDose": 4000, "dividedDoses": 4 },
   { "name": "Ibuprofen", "dosePerKg": 10, "maxDose": 3200, "dividedDoses": 3 },
   { "name": "Amoxicillin", "dosePerKg": 20, "maxDose": 1500, "dividedDoses": 3 },
   { "name": "Azithromycin", "dosePerKg": 10, "maxDose": 500, "dividedDoses": 1 },
