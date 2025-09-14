@@ -1,6 +1,10 @@
 [
   { "name": "Paracetamol", "dosePerKg": 10, "maxDose": 4000, "dividedDoses": 4 },
   { "name": "Ibuprofen", "dosePerKg": 10, "maxDose": 3200, "dividedDoses": 3 },
+  { "name": "Chlorpheniramine maleate", "dosePerKg": 0.35, "maxDose": 12, "dividedDoses": 3 },
+  { "name": "Phenylephrine", "dosePerKg": 0.20, "maxDose": 15, "dividedDoses": 4 },
+  { "name": "Rantidine", "dosePerKg": 4, "maxDose": 300, "dividedDoses": 2 },
+  { "name": "Dicyclomine", "dosePerKg": 1, "maxDose": 40, "dividedDoses": 3 },
   { "name": "Amoxicillin", "dosePerKg": 20, "maxDose": 1500, "dividedDoses": 3 },
   { "name": "Azithromycin", "dosePerKg": 10, "maxDose": 500, "dividedDoses": 1 },
   { "name": "Ciprofloxacin", "dosePerKg": 15, "maxDose": 1500, "dividedDoses": 2 },
