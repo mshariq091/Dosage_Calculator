@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Medicine Dosage Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>Medicine Dosage Calculator</h2>
+
+  <label for="medicine">Select Medicine:</label>
+  <select id="medicine"></select>
+
+  <label for="weight">Enter weight (kg):</label>
+  <input type="number" id="weight" min="1" step="0.1" placeholder="e.g. 25" />
+
+  <button onclick="calculate()">Calculate Dosage</button>
+
+  <div id="result"></div>
+
+  <p class="disclaimer">
+    ⚠️ Disclaimer: This calculator is for educational purposes only and not a substitute for professional medical advice. 
+    Dosage varies by individual and condition. Always consult a qualified healthcare provider before giving medication.
+  </p>
+
+  <script src="app.js"></script>
+</body>
+</html>
