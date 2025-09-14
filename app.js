@@ -25,20 +25,15 @@ function calculate() {
 
   const med = window.medicines[selectedIndex];
   const calculatedDose = weight * med.dosePerKg;
-  const cappedDose = Math.min(calculatedDose, med.maxDose);
-  const perDose = (cappedDose / med.dividedDoses).toFixed(2);
+  const totalDose = calculatedDose * med.dividedDoses;
 
-  let resultText =
+  const resultText =
     `💊 Medicine: ${med.name}\n` +
     `👶 Weight: ${weight} kg\n` +
-    `📈 Calculated Dose: ${calculatedDose.toFixed(2)} mg/day\n` +
-    `🚫 Max Allowed Dose: ${med.maxDose} mg/day\n` +
-    `✅ Final Dose Used: ${cappedDose.toFixed(2)} mg/day\n` +
-    `🕒 Divided Doses: ${med.dividedDoses} × ${perDose} mg`;
-
-  if (calculatedDose > med.maxDose) {
-    resultText += `\n⚠️ Note: Calculated dose exceeds max limit and has been capped.`;
-  }
+    `📈 Calculated Dose: ${calculatedDose.toFixed(2)} mg\n` +
+    `🚫 Max Allowed Dose (Adult): ${med.maxDose} mg/day\n` +
+    `✅ Final Daily Dose: ${totalDose.toFixed(2)} mg/day\n` +
+    `🕒 Divided Doses: ${med.dividedDoses} × ${calculatedDose.toFixed(2)} mg`;
 
   document.getElementById("result").innerText = resultText;
 }
