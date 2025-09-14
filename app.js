@@ -25,14 +25,14 @@ function calculate() {
 
   const med = window.medicines[selectedIndex];
   const calculatedDose = weight * med.dosePerKg;
-  const totalDose = calculatedDose * med.dividedDoses;
+  const finalDailyDose = calculatedDose * med.dividedDoses;
 
   const resultText =
     `💊 Medicine: ${med.name}\n` +
     `👶 Weight: ${weight} kg\n` +
-    `📈 Calculated Dose: ${calculatedDose.toFixed(2)} mg\n` +
+    `📈 Calculated Dose per administration: ${calculatedDose.toFixed(2)} mg\n` +
     `🚫 Max Allowed Dose (Adult): ${med.maxDose} mg/day\n` +
-    `✅ Final Daily Dose: ${totalDose.toFixed(2)} mg/day\n` +
+    `✅ Final Daily Dose: ${finalDailyDose.toFixed(2)} mg/day\n` +
     `🕒 Divided Doses: ${med.dividedDoses} × ${calculatedDose.toFixed(2)} mg`;
 
   document.getElementById("result").innerText = resultText;
